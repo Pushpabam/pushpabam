@@ -13,6 +13,10 @@
             --dark-color: #333;
             --light-color: #f4f4f4;
             --youtube-red: #FF0000;
+            --tiktok-teal: #00F2EA;
+            --tiktok-pink: #FF0050;
+            --facebook-blue: #1877F2;
+            --instagram-purple: #E4405F;
         }
         
         body {
@@ -25,11 +29,12 @@
         }
         
         header {
-            background: linear-gradient(to right, var(--secondary-color), #FFFFFF, var(--primary-color));
-            color: white;
+            background: white;
+            color: var(--dark-color);
             padding: 20px 0;
             text-align: center;
             position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .header-content {
@@ -58,7 +63,7 @@
         .search-input {
             flex: 1;
             padding: 10px 15px;
-            border: none;
+            border: 2px solid #ddd;
             border-radius: 25px 0 0 25px;
             font-size: 16px;
             outline: none;
@@ -66,7 +71,7 @@
         
         .search-button {
             padding: 10px 20px;
-            background: var(--dark-color);
+            background: var(--primary-color);
             color: white;
             border: none;
             border-radius: 0 25px 25px 0;
@@ -76,7 +81,7 @@
         }
         
         .search-button:hover {
-            background: #555;
+            background: #0e7006;
         }
         
         nav {
@@ -134,16 +139,7 @@
             transform: translateY(-5px);
         }
         
-        .profile-img {
-            display: block;
-            margin: 0 auto;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--primary-color);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+        /* Removed the circular profile image CSS */
         
         .social-links {
             display: flex;
@@ -157,7 +153,6 @@
             display: inline-flex;
             align-items: center;
             padding: 10px 20px;
-            background: var(--primary-color);
             color: white;
             border-radius: 50px;
             text-decoration: none;
@@ -166,7 +161,6 @@
         }
         
         .social-links a:hover {
-            background: #0e7006;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
@@ -177,7 +171,31 @@
         }
         
         .youtube-btn {
-            background-color: var(--youtube-red) !important;
+            background-color: var(--youtube-red);
+        }
+        .youtube-btn:hover {
+            background-color: #cc0000;
+        }
+        
+        .tiktok-btn {
+            background: linear-gradient(to right, var(--tiktok-teal), var(--tiktok-pink));
+        }
+        .tiktok-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .facebook-btn {
+            background-color: var(--facebook-blue);
+        }
+        .facebook-btn:hover {
+            background-color: #166fe5;
+        }
+        
+        .instagram-btn {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+        .instagram-btn:hover {
+            opacity: 0.9;
         }
         
         .video-container {
@@ -283,11 +301,12 @@
     
     <div class="container">
         <section id="about" class="section">
-            <img src="pushpa-profile.jpg" alt="Pushpa Bam Thakuri" class="profile-img">
+            <!-- Removed the profile image from here -->
             <h2><i class="fas fa-user"></i> मेरो बारेमा</h2>
             <p>नमस्ते! म पुष्पा बम ठकुरी, हुम्ला जिल्लाको खार्पुनाथ-४ का बासिन्दा हुँ। म वित्तीय क्षेत्रमा पेशेवर रूपमा संलग्न छु र सामाजिक सञ्जाल मार्फत विभिन्न सामाजिक कार्यहरूमा सहभागी हुने गर्छु। मेरो YouTube च्यानल "Classic Talks" मा म विभिन्न विषयहरूमा छलफल गर्छु।</p>
         </section>
         
+        <!-- Rest of your sections remain unchanged -->
         <section id="work" class="section">
             <h2><i class="fas fa-briefcase"></i> मेरो कार्यहरू</h2>
             <p>मैले विभिन्न सामाजिक माध्यमहरूमा गतिविधिहरू संचालन गरिरहेको छु:</p>
@@ -296,6 +315,7 @@
                 <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> महिला सशक्तिकरण अभियान</li>
                 <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> सामाजिक सञ्जाल मार्फत जागरूकता</li>
                 <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> YouTube मा "Classic Talks" च्यानल संचालन</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> TikTok मा शैक्षिक सामग्री निर्माण</li>
             </ul>
         </section>
         
@@ -303,8 +323,8 @@
             <h2><i class="fab fa-youtube" style="color: var(--youtube-red);"></i> Classic Talks YouTube</h2>
             <p>मेरो YouTube च्यानल "Classic Talks" मा तपाईंलाई यहाँ पाउनुहुनेछ:</p>
             <div class="social-links">
-                <a href="https://youtube.com/c/ClassicTalks" target="_blank" class="youtube-btn">
-                    <i class="fab fa-youtube"></i> YouTube Channel
+                <a href="https://youtube.com/@ClassicTalks" target="_blank" class="youtube-btn">
+                    <i class="fab fa-youtube"></i> YouTube/ClassicTalks
                 </a>
             </div>
             
@@ -325,16 +345,19 @@
         <section id="contact" class="section">
             <h2><i class="fas fa-envelope"></i> सम्पर्क गर्नुहोस्</h2>
             <div class="social-links">
-                <a href="https://facebook.com/PushpaBamThakuri" target="_blank">
-                    <i class="fab fa-facebook"></i> Facebook
+                <a href="https://facebook.com/PushpaBamThakuri" target="_blank" class="facebook-btn">
+                    <i class="fab fa-facebook"></i> Facebook/PushpaBamThakuri
                 </a>
-                <a href="https://instagram.com/PushpaBamThakuri" target="_blank">
-                    <i class="fab fa-instagram"></i> Instagram
+                <a href="https://instagram.com/PushpaBamThakuri" target="_blank" class="instagram-btn">
+                    <i class="fab fa-instagram"></i> Instagram/PushpaBamThakuri
                 </a>
-                <a href="https://youtube.com/c/ClassicTalks" target="_blank" class="youtube-btn">
-                    <i class="fab fa-youtube"></i> YouTube
+                <a href="https://youtube.com/@ClassicTalks" target="_blank" class="youtube-btn">
+                    <i class="fab fa-youtube"></i> YouTube/ClassicTalks
                 </a>
-                <a href="mailto:contact@pushpabamhaml.com">
+                <a href="https://tiktok.com/@pushpa.bam.hamal" target="_blank" class="tiktok-btn">
+                    <i class="fab fa-tiktok"></i> TikTok/pushpa.bam.hamal
+                </a>
+                <a href="mailto:contact@pushpabamhaml.com" class="email-btn" style="background: var(--primary-color);">
                     <i class="fas fa-envelope"></i> Email
                 </a>
             </div>
@@ -348,6 +371,20 @@
     
     <footer>
         <p>© <span id="currentYear"></span> पुष्पा बम ठकुरी - Classic Talks. सर्वाधिकार सुरक्षित।</p>
+        <div class="social-links" style="justify-content: center; margin: 15px 0;">
+            <a href="https://facebook.com/PushpaBamThakuri" target="_blank" class="facebook-btn" style="padding: 8px 15px;">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://instagram.com/PushpaBamThakuri" target="_blank" class="instagram-btn" style="padding: 8px 15px;">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://youtube.com/@ClassicTalks" target="_blank" class="youtube-btn" style="padding: 8px 15px;">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://tiktok.com/@pushpa.bam.hamal" target="_blank" class="tiktok-btn" style="padding: 8px 15px;">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
         <p>वेबसाइट: pushpabamhaml.com | YouTube: Classic Talks</p>
     </footer>
 
@@ -382,7 +419,6 @@
         function searchWebsite() {
             const searchTerm = searchInput.value.trim();
             if (searchTerm !== '') {
-                // This is a basic search - you can enhance it to search through your content
                 const sections = document.querySelectorAll('.section');
                 let found = false;
                 
@@ -416,7 +452,6 @@
         
         // Replace with your actual YouTube video IDs
         function loadYouTubeVideos() {
-            // Replace these with your actual video IDs
             const videoIds = ['YOUR_VIDEO_ID_1', 'YOUR_VIDEO_ID_2'];
             const iframes = document.querySelectorAll('.video-wrapper iframe');
             
@@ -427,7 +462,6 @@
             });
         }
         
-        // Call this function when page loads
         window.addEventListener('DOMContentLoaded', loadYouTubeVideos);
     </script>
 </body>
