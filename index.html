@@ -25,12 +25,11 @@
         }
         
         header {
-            background: white;
-            color: var(--dark-color);
+            background: linear-gradient(to right, var(--secondary-color), #FFFFFF, var(--primary-color));
+            color: white;
             padding: 20px 0;
             text-align: center;
             position: relative;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .header-content {
@@ -59,7 +58,7 @@
         .search-input {
             flex: 1;
             padding: 10px 15px;
-            border: 2px solid #ddd;
+            border: none;
             border-radius: 25px 0 0 25px;
             font-size: 16px;
             outline: none;
@@ -67,7 +66,7 @@
         
         .search-button {
             padding: 10px 20px;
-            background: var(--primary-color);
+            background: var(--dark-color);
             color: white;
             border: none;
             border-radius: 0 25px 25px 0;
@@ -77,10 +76,9 @@
         }
         
         .search-button:hover {
-            background: #0e7006;
+            background: #555;
         }
-
-        /* Rest of your CSS remains the same */
+        
         nav {
             background: var(--dark-color);
             padding: 15px 0;
@@ -90,8 +88,171 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        /* ... (rest of your existing CSS) ... */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
         
+        nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background: var(--primary-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .profile-img {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .social-links a:hover {
+            background: #0e7006;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .social-links a i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+        
+        .youtube-btn {
+            background-color: var(--youtube-red) !important;
+        }
+        
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .video-wrapper {
+            width: 100%;
+            max-width: 560px;
+        }
+        
+        .video-wrapper iframe {
+            width: 100%;
+            height: 315px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .header-content h1 {
+                font-size: 24px;
+            }
+            
+            .search-container {
+                width: 90%;
+            }
+            
+            .video-wrapper iframe {
+                height: 200px;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -111,7 +272,6 @@
         </div>
     </header>
     
-    <!-- Rest of your HTML remains the same -->
     <nav>
         <ul>
             <li><a href="#about"><i class="fas fa-user"></i> मेरो बारेमा</a></li>
@@ -121,7 +281,154 @@
         </ul>
     </nav>
     
-    <!-- ... (rest of your existing HTML) ... -->
+    <div class="container">
+        <section id="about" class="section">
+            <img src="pushpa-profile.jpg" alt="Pushpa Bam Thakuri" class="profile-img">
+            <h2><i class="fas fa-user"></i> मेरो बारेमा</h2>
+            <p>नमस्ते! म पुष्पा बम ठकुरी, हुम्ला जिल्लाको खार्पुनाथ-४ का बासिन्दा हुँ। म वित्तीय क्षेत्रमा पेशेवर रूपमा संलग्न छु र सामाजिक सञ्जाल मार्फत विभिन्न सामाजिक कार्यहरूमा सहभागी हुने गर्छु। मेरो YouTube च्यानल "Classic Talks" मा म विभिन्न विषयहरूमा छलफल गर्छु।</p>
+        </section>
+        
+        <section id="work" class="section">
+            <h2><i class="fas fa-briefcase"></i> मेरो कार्यहरू</h2>
+            <p>मैले विभिन्न सामाजिक माध्यमहरूमा गतिविधिहरू संचालन गरिरहेको छु:</p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> वित्तीय साक्षरता कार्यक्रमहरू</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> महिला सशक्तिकरण अभियान</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> सामाजिक सञ्जाल मार्फत जागरूकता</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> YouTube मा "Classic Talks" च्यानल संचालन</li>
+            </ul>
+        </section>
+        
+        <section id="youtube" class="section">
+            <h2><i class="fab fa-youtube" style="color: var(--youtube-red);"></i> Classic Talks YouTube</h2>
+            <p>मेरो YouTube च्यानल "Classic Talks" मा तपाईंलाई यहाँ पाउनुहुनेछ:</p>
+            <div class="social-links">
+                <a href="https://youtube.com/c/ClassicTalks" target="_blank" class="youtube-btn">
+                    <i class="fab fa-youtube"></i> YouTube Channel
+                </a>
+            </div>
+            
+            <div style="margin-top: 30px;">
+                <h3 style="text-align: center;"><i class="fas fa-video"></i> हालैका भिडियोहरू</h3>
+                <div class="video-container">
+                    <!-- Replace these with your actual YouTube embed codes -->
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="section">
+            <h2><i class="fas fa-envelope"></i> सम्पर्क गर्नुहोस्</h2>
+            <div class="social-links">
+                <a href="https://facebook.com/PushpaBamThakuri" target="_blank">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="https://instagram.com/PushpaBamThakuri" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://youtube.com/c/ClassicTalks" target="_blank" class="youtube-btn">
+                    <i class="fab fa-youtube"></i> YouTube
+                </a>
+                <a href="mailto:contact@pushpabamhaml.com">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">
+                वेबसाइट: <a href="https://pushpabamhaml.com" target="_blank" style="color: var(--primary-color); font-weight: bold;">pushpabamhaml.com</a>
+            </p>
+        </section>
+    </div>
+    
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+    
+    <footer>
+        <p>© <span id="currentYear"></span> पुष्पा बम ठकुरी - Classic Talks. सर्वाधिकार सुरक्षित।</p>
+        <p>वेबसाइट: pushpabamhaml.com | YouTube: Classic Talks</p>
+    </footer>
 
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Search functionality
+        const searchButton = document.querySelector('.search-button');
+        const searchInput = document.querySelector('.search-input');
+        
+        searchButton.addEventListener('click', searchWebsite);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchWebsite();
+            }
+        });
+        
+        function searchWebsite() {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm !== '') {
+                // This is a basic search - you can enhance it to search through your content
+                const sections = document.querySelectorAll('.section');
+                let found = false;
+                
+                sections.forEach(section => {
+                    if (section.textContent.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                        section.style.animation = 'highlight 2s';
+                        found = true;
+                    }
+                });
+                
+                if (!found) {
+                    alert(`"${searchTerm}" भनेर कुनै परिणाम फेला परेन। कृपया अर्को शब्दले खोज्नुहोस्।`);
+                }
+            }
+        }
+        
+        // Add highlight animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes highlight {
+                0% { background-color: white; }
+                50% { background-color: #ffffcc; }
+                100% { background-color: white; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Update copyright year automatically
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Replace with your actual YouTube video IDs
+        function loadYouTubeVideos() {
+            // Replace these with your actual video IDs
+            const videoIds = ['YOUR_VIDEO_ID_1', 'YOUR_VIDEO_ID_2'];
+            const iframes = document.querySelectorAll('.video-wrapper iframe');
+            
+            iframes.forEach((iframe, index) => {
+                if (videoIds[index]) {
+                    iframe.src = `https://www.youtube.com/embed/${videoIds[index]}`;
+                }
+            });
+        }
+        
+        // Call this function when page loads
+        window.addEventListener('DOMContentLoaded', loadYouTubeVideos);
+    </script>
 </body>
 </html>
